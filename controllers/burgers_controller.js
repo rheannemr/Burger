@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     burger.selectAll(function(data) {
-        var burgerObj = { burgers: data };
+        const burgerObj = { burgers: data };
         console.log(burgerObj);
         res.render('index', burgerObj);
     })
@@ -17,8 +17,17 @@ router.post('/api/burgers', (req, res) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-    
-    burger.updateOne(req.params.id,)
+    const condition = `id = ${req.params.id}`;
+    console.log("condition: ", condition);
+    burger.updateOne({
+            devoured: req.body.devoured
+        }, condition, (result) => {
+            if(result.changedRows === 0) {
+                return res.status(404).end();
+            }
+            res.status(200).end();
+        }
+    )
 });
 
 module.exports = router;
