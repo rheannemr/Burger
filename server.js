@@ -10,7 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-// app.use(routes);
+
+var routes = require("./controllers/burgers_controller.js")
+app.use(routes);
 
 app.listen(PORT, () =>
   console.log('Server is listening on http://localhost:' + PORT)
