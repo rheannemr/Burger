@@ -5,13 +5,15 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.use(express.static('./public'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-var routes = require("./controllers/burgers_controller.js")
+const routes = require("./controllers/burgers_controller")
 app.use(routes);
 
 app.listen(PORT, () =>

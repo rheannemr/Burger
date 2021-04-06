@@ -1,0 +1,56 @@
+<div className="jumbotron">
+    <h1 className="text-center">Let's eat Burgers!</h1>
+    <p className="lead text-center"></p>
+</div>
+
+{{!-- <div class='container' style='justify-content: center; text-align: center;'>
+    <div class='row'>
+        <img src='/assets/img/burgerclipart.png' alt='cheeseburger'>
+    </div>
+</div> --}}
+
+<div class="row">
+  <center>
+    <!-- Left side (ready to eat) -->
+    <div class="col-md-6">
+      <h4 class="red_font">Ready to eat!</h4>
+      <div id="ready_to_eat">
+
+        <!-- Dynamically Insert Ready Burgers Here -->
+        {{#each burgers}}
+          {{#unless devoured}}
+          <form action="api/burgers/{{id}}" method="POST">
+            <div class="input-group">
+              <li class="form-control">{{id}}. {{burger_name}}</li>
+                <span class="input-group-btn">
+                  <button class="btn btn-success devour-btn" type="submit">Devour It!</button>
+                </span>
+            </div>
+          </form>
+          {{/unless}}
+        {{/each}}
+
+      </div>
+    </div>
+
+    <!-- Right side (already eaten) -->
+    <div class="col-md-6">
+      <h4 class="red_font">Already eaten!</h4>
+      <div id="already_eaten">
+
+        <!-- Dynamically Insert Eaten Burgers Here -->
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div class="input-group">
+              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+              <span class="input-group-btn">
+                <button class="btn btn-info burger-btn" type="button">Whine!</button>
+              </span>
+            </div>
+          {{/if}}
+        {{/each}}
+
+      </div>
+    </div>
+  </center>
+</div>
