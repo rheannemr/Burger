@@ -1,56 +1,51 @@
-<div className="jumbotron">
-    <h1 className="text-center">Let's eat Burgers!</h1>
-    <p className="lead text-center"></p>
-</div>
+<h1 class="header">
+    Eat Da Burger!
+</h1>
 
-{{!-- <div class='container' style='justify-content: center; text-align: center;'>
-    <div class='row'>
-        <img src='/assets/img/burgerclipart.png' alt='cheeseburger'>
-    </div>
-</div> --}}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2 class="h2-header">Add and Devour your Favorite Burger!</h2>
+            <br />
+            <form class="create-form">
+                <div>
+                    <input type="text" class="form-control" id="nb" placeholder="Enter Burger">
+                </div>
+                <br />
+                <button type="submit" class="add-burger-button">Add Burger</button>
+            </form>
+        </div>
 
-<div class="row">
-  <center>
-    <!-- Left side (ready to eat) -->
-    <div class="col-md-6">
-      <h4 class="red_font">Ready to eat!</h4>
-      <div id="ready_to_eat">
+        <div class="col-sm">
 
-        <!-- Dynamically Insert Ready Burgers Here -->
-        {{#each burgers}}
-          {{#unless devoured}}
-          <form action="api/burgers/{{id}}" method="POST">
-            <div class="input-group">
-              <li class="form-control">{{id}}. {{burger_name}}</li>
-                <span class="input-group-btn">
-                  <button class="btn btn-success devour-btn" type="submit">Devour It!</button>
-                </span>
-            </div>
-          </form>
-          {{/unless}}
-        {{/each}}
+            <h2 class="h2-header">To Be Eaten...</h2>
 
-      </div>
-    </div>
 
-    <!-- Right side (already eaten) -->
-    <div class="col-md-6">
-      <h4 class="red_font">Already eaten!</h4>
-      <div id="already_eaten">
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    {{ burger_name }}
+                    <button type="button" class="devour-button" data-id="{{id}}">NOM</button>
+                </li><br>
+                {{/unless}}
+                {{/each}}
+            </ul>
 
-        <!-- Dynamically Insert Eaten Burgers Here -->
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="input-group">
-              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-              <span class="input-group-btn">
-                <button class="btn btn-info burger-btn" type="button">Whine!</button>
-              </span>
-            </div>
-          {{/if}}
-        {{/each}}
+        </div>
 
-      </div>
-    </div>
-  </center>
+        <div class="col-sm">
+
+            <h2 class="h2-header">Devoured!</h2>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
 </div>

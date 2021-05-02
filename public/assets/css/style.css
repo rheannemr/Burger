@@ -1,62 +1,36 @@
-body {
-    text-align: center;
-    background-image: none;
-    font-family: helvetica;
-    color: white;
-  
-    
-  }
-  
-  li {
-      padding: 5px;
-      margin-left: 40%;
-      margin-right: 40%;
-      background: black;
-      opacity: 4;
-      border-radius: 10pc;
-      font-weight: bolder;
-    }
-    
-    
-    
-    .create-form {
-      padding: 5px;
-      margin-left: 43%;
-      margin-right: 40%;
-      background: black;
-      opacity: 1;
-      border-radius: 10pc;
-      font-weight: bolder;
-    }
-    
-    .form-group {
-      margin-bottom: 1px;
-     
-    }
-    
-    .devour-btn {
-      margin-left: 4px;
-      margin-top: 25px;
-      color: black;
-    }
-  
-    .index-font {
-      color: black;
-    }
-  
-    .burger-btn {
-      background-color: #4CAF50;
-      border: none;
-      padding: 5px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border-radius: 8px;
-      color: black;
-      
-    }
+.header {
+  margin-top: 40px;
+  color: #fdde62;
+}
 
-    h1 {
-      text-align: center;
-    }
+.h2-header {
+  color: black;
+}
+
+body {
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  margin-top: 150px;
+}
+
+li {
+  list-style-type: none;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.add-burger-button,
+.devour-button {
+  margin: 5px;
+  background-color: #92d695;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 12px;
+  font-family: "Balsamiq Sans", cursive;
+}
