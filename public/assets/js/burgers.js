@@ -1,14 +1,14 @@
-(function () {
-  $(".devour-button").on("click", function (event) {
+$(function () {
+  $('.devour-button').on('click', function (event) {
     event.preventDefault();
-    var id = $(this).data("id");
+    var id = $(this).data('id');
     var newBurgerState = {
       devoured: true
     };
 
     // PUT Request
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
+    $.ajax('/api/burgers/' + id, {
+      type: 'PUT',
       data: newBurgerState
     }).then(
       function () {
@@ -18,16 +18,16 @@
     )
   })
 
-  $(".add-burger-button").on("click", function (event) {
+  $('.add-burger-button').on('click', function (event) {
     event.preventDefault();
     var newBurgers = {
-      burger_name: $("#nb").val().trim(),
+      burger_name: $('#nb').val().trim(),
       devoured: 0
     };
 
     // POST Request
-    $.ajax("/api/burgers", {
-      type: "POST",
+    $.ajax('/api/burgers', {
+      type: 'POST',
       data: newBurgers
     }).then(
       function () {

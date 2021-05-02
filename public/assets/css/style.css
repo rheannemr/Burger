@@ -22,6 +22,12 @@ li {
   font-family: "Balsamiq Sans", cursive;
 }
 
+.enter-burger {
+  font-family: "Balsamiq Sans", cursive;
+  width: max-content;
+  
+}
+
 .add-burger-button,
 .devour-button {
   margin: 5px;

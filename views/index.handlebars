@@ -1,42 +1,35 @@
-<h1 class="header">
+<h1 class='header'>
     Eat Da Burger!
 </h1>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <h2 class="h2-header">Add and Devour your Favorite Burger!</h2>
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm'>
+            <h2 class='h2-header'>Add and Devour your Favorite Burger!</h2>
             <br />
-            <form class="create-form">
+            <form>
                 <div>
-                    <input type="text" class="form-control" id="nb" placeholder="Enter Burger">
+                    <input type='text' id='nb' class='enter-burger' placeholder='Enter Burger'>
                 </div>
                 <br />
-                <button type="submit" class="add-burger-button">Add Burger</button>
+                <button type='submit' class='add-burger-button'>Add Burger</button>
             </form>
         </div>
-
-        <div class="col-sm">
-
-            <h2 class="h2-header">To Be Eaten...</h2>
-
-
+        <div class='col-sm'>
+            <h2 class='h2-header'>To Be Eaten...</h2>
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
                     {{ burger_name }}
-                    <button type="button" class="devour-button" data-id="{{id}}">NOM</button>
+                    <button type='button' class='devour-button' data-id='{{id}}'>NOM</button>
                 </li><br>
                 {{/unless}}
                 {{/each}}
             </ul>
-
         </div>
-
-        <div class="col-sm">
-
-            <h2 class="h2-header">Devoured!</h2>
+        <div class='col-sm'>
+            <h2 class='h2-header'>Devoured!</h2>
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
@@ -46,6 +39,6 @@
                 {{/if}}
                 {{/each}}
             </ul>
-
         </div>
+    </div>
 </div>
