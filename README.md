@@ -1,6 +1,6 @@
 # Burger
 
-Eat Da Burger is a restaurant application that lets the user input the names of burgers they'd like to eat; It is created using Node.js, Express, Handlebars, MySQL, and Orm. When the user adds the burger they'd like to eat, it is displayed on the page and is waiting for them to devour it. Once devoured, the burger will move to the right side of the page. This application stores every burger in the MySQL database, whether devoures or not.
+Eat Da Burger is a restaurant application that lets the user input the names of burgers they'd like to eat; It is created using Node.js, Express, Handlebars, MySQL, and Orm. When the user adds the burger they'd like to eat, it is displayed on the page and is waiting for them to devour it. Once devoured, the burger will move to the right side of the page. This application stores every burger in the MySQL database, whether devoured or not.
 
 ## Table of Contents
 - [General Info](#general-info)
